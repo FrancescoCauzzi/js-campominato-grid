@@ -1,22 +1,26 @@
-let myContainerEl = document.querySelector(".__main-my-container-fluid");
+let myContainerEl = document.querySelector(".__my-container");
 
 console.log(myContainerEl);
-let elementToAppend;
+
 function generateSquareGrid(row, className, elementRecevingAppend) {
   for (let i = 0; i < row ** 2; i++) {
-    elementToAppend = document.createElement("div");
+    let elementToAppend = document.createElement("div");
     elementToAppend.classList.add(className);
     elementToAppend.style.width = `calc(100% / ${row})`;
-    console.log(elementToAppend.offsetWidth);
-
+    elementToAppend.style.height = `calc(100% / ${row})`;
+    elementToAppend.innerHTML = `${i + 1}`;
     elementRecevingAppend.append(elementToAppend);
+    elementToAppend.addEventListener("click", function () {
+      console.log(elementToAppend.innerHTML);
+    });
+
+    // elementToAppend.style.heigth = elementToAppend.offsetWidth + "px";
   }
+
   // for (let i = 0; i < row ** 2; i++) {
   // }
   //let elementToAppendWidth = elementToAppend.offsetWidth;
   //elementToAppend.style.heigth = elementToAppendWidth + "px";
-  elementToAppend.style.heigth = elementToAppend.offsetWidth;
-  console.log(elementToAppend.offsetWidth);
 }
 
 generateSquareGrid(10, "__cella", myContainerEl);
