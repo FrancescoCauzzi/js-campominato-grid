@@ -5,7 +5,7 @@
 }
 
 .__my-nav-bar {
-  height: 180px;
+  padding: 20px 10px 20px 10px;
 }
 
 .__img-logo-container {
@@ -16,4 +16,15 @@
 #img-logo {
   object-fit: contain;
   height: 130px;
+}
+
+.__main-my-container-fluid {
+  height: 80vh;
+  background-color: #7fffd4;
+}
+
+/* footer */
+.__my-footer-div {
+  background-color: #f8f9fa;
+  padding: 20px 10px 20px 10px;
 }
