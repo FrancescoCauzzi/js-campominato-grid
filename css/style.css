@@ -19,8 +19,19 @@
 }
 
 .__main-my-container-fluid {
-  height: 80vh;
+  padding: 30px 500px 30px 500px;
   background-color: #7fffd4;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.__cella {
+  background-color: red;
+  border: 1px solid black;
+  /* width: calc(100% / 10); */
+  /* height: 100px; */
+  /*height: 40px; */
 }
 
 /* footer */
