@@ -3,3 +3,17 @@
   margin: 0;
   padding: 0;
 }
+
+.__my-nav-bar {
+  height: 180px;
+}
+
+.__img-logo-container {
+  height: 100%;
+  min-width: 130px;
+}
+
+#img-logo {
+  object-fit: contain;
+  height: 130px;
+}
