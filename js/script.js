@@ -1,10 +1,11 @@
 let myContainerEl = document.querySelector(".__my-container");
 
-console.log(myContainerEl);
+// console.log(myContainerEl);
 
-function generateSquareGrid(row, className, elementRecevingAppend) {
+// function to generate the grid
+function generateSquareGrid(row, className, type, elementRecevingAppend) {
   for (let i = 0; i < row ** 2; i++) {
-    let elementToAppend = document.createElement("div");
+    let elementToAppend = document.createElement(type);
     elementToAppend.classList.add(className);
     elementToAppend.style.width = `calc(100% / ${row})`;
     elementToAppend.style.height = `calc(100% / ${row})`;
@@ -12,18 +13,40 @@ function generateSquareGrid(row, className, elementRecevingAppend) {
     elementRecevingAppend.append(elementToAppend);
     elementToAppend.addEventListener("click", function () {
       console.log(elementToAppend.innerHTML);
+      elementToAppend.classList.toggle("__blue");
     });
-
-    // elementToAppend.style.heigth = elementToAppend.offsetWidth + "px";
   }
-
-  // for (let i = 0; i < row ** 2; i++) {
-  // }
-  //let elementToAppendWidth = elementToAppend.offsetWidth;
-  //elementToAppend.style.heigth = elementToAppendWidth + "px";
 }
 
-generateSquareGrid(10, "__cella", myContainerEl);
+let difficultyEl = document.getElementById("difficulty");
 
-// let cardHeight = newDivElement.offsetWidth;
-//   newDivElement.style.height = cardHeight + "px";
+// console.log(difficultyEl.value);
+
+let playBtnEl = document.getElementById("play-btn");
+// console.log(playBtnEl);
+let resetBtnEl = document.getElementById("reset");
+// console.log(resetBtnEl);
+
+function handlePLayClick() {
+  if (Number(difficultyEl.value) === 1) {
+    generateSquareGrid(10, "__cella", "div", myContainerEl);
+  } else if (Number(difficultyEl.value) === 2) {
+    generateSquareGrid(9, "__cella", "div", myContainerEl);
+  } else if (Number(difficultyEl.value) === 3) {
+    generateSquareGrid(7, "__cella", "div", myContainerEl);
+  }
+  playBtnEl.removeEventListener("click", handlePLayClick);
+}
+
+function handleResetClick() {
+  const cellsToRemove = myContainerEl.querySelectorAll(".__cella");
+
+  for (let i = 0; i < cellsToRemove.length; i++) {
+    myContainerEl.removeChild(cellsToRemove[i]);
+  }
+  playBtnEl.addEventListener("click", handlePLayClick);
+}
+
+playBtnEl.addEventListener("click", handlePLayClick);
+
+resetBtnEl.addEventListener("click", handleResetClick);

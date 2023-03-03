@@ -48,17 +48,25 @@
           <form class="d-flex gap-3 align-items-center fs-2 " role="search">
             <label for="__difficoltà">Scegli un livello di difficoltà:</label>
             <div class="dropdown   ">
-              <button class="btn btn-secondary dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown"
+              <!--<button class="btn btn-secondary dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown"
                 id="__difficoltà" aria-expanded="false">
                 Difficoltà
               </button>
-              <ul class="dropdown-menu ">
-                <li><a class="dropdown-item fs-3" href="#" value="">1. Easy</a></li>
-                <li><a class="dropdown-item fs-3" href="#" value="">2. Hard</a></li>
-                <li><a class="dropdown-item fs-3" href="#" value="">3. Fucking Hard</a></li>
-              </ul>
+               <ul class="dropdown-menu ">
+                <li><a class="dropdown-item fs-3" href="#" value="1" id="diffilcuty-easy">1. Easy</a></li>
+                <li><a class="dropdown-item fs-3" href="#" value="2">2. Hard</a></li>
+                <li><a class="dropdown-item fs-3" href="#" value="3">3. Fucking Hard</a></li>
+              </ul> -->
+              <select class="form-select fs-3" aria-label="Default select example" id="difficulty">
+
+                <option value="1" selected>1. Easy</option>
+                <option value="2">2. Hard</option>
+                <option value="3">3. Very Hard</option>
+              </select>
+
             </div>
-            <button class="btn btn-outline-success fs-3" type="submit">Play</button>
+            <button class="btn btn-outline-success fs-3" type="" id="play-btn">Play</button>
+            <button type="button" class="btn btn-outline-danger fs-3" id="reset">Reset</button>
           </form>
         </div>
       </div>

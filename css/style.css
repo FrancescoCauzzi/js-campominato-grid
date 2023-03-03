@@ -36,7 +36,7 @@
 }
 
 .__cella {
-  background-color: #dcdcdc;
+  /* background-color: #dcdcdc; */
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -50,4 +50,8 @@
 .__my-footer-div {
   background-color: #f8f9fa;
   padding: 20px 10px 20px 10px;
+}
+
+.__blue {
+  background-color: #90d0d8;
 }
