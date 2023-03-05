@@ -1,5 +1,12 @@
 let myContainerEl = document.querySelector(".__my-container");
+let difficultyEl = document.getElementById("difficulty");
 
+// console.log(difficultyEl.value);
+
+let playBtnEl = document.getElementById("play-btn");
+// console.log(playBtnEl);
+let resetBtnEl = document.getElementById("reset");
+// console.log(resetBtnEl);
 // console.log(myContainerEl);
 
 // function to generate the grid
@@ -8,7 +15,7 @@ function generateSquareGrid(row, className, type, elementRecevingAppend) {
     let elementToAppend = document.createElement(type);
     elementToAppend.classList.add(className);
     elementToAppend.style.width = `calc(100% / ${row})`;
-    elementToAppend.style.height = `calc(100% / ${row})`;
+    elementToAppend.style.aspectRatio = `1/1`;
     elementToAppend.innerHTML = `${i + 1}`;
     elementRecevingAppend.append(elementToAppend);
     elementToAppend.addEventListener("click", function () {
@@ -18,16 +25,8 @@ function generateSquareGrid(row, className, type, elementRecevingAppend) {
   }
 }
 
-let difficultyEl = document.getElementById("difficulty");
-
-// console.log(difficultyEl.value);
-
-let playBtnEl = document.getElementById("play-btn");
-// console.log(playBtnEl);
-let resetBtnEl = document.getElementById("reset");
-// console.log(resetBtnEl);
-
 function handlePLayClick() {
+  // event.preventDefault();
   if (Number(difficultyEl.value) === 1) {
     generateSquareGrid(10, "__cella", "div", myContainerEl);
   } else if (Number(difficultyEl.value) === 2) {
@@ -39,7 +38,8 @@ function handlePLayClick() {
 }
 
 function handleResetClick() {
-  const cellsToRemove = myContainerEl.querySelectorAll(".__cella");
+  //event.preventDefault();
+  let cellsToRemove = myContainerEl.querySelectorAll(".__cella");
 
   for (let i = 0; i < cellsToRemove.length; i++) {
     myContainerEl.removeChild(cellsToRemove[i]);
