@@ -1,8 +1,6 @@
 let myContainerEl = document.querySelector(".__my-container");
 let difficultyEl = document.getElementById("difficulty");
-
 // console.log(difficultyEl.value);
-
 let playBtnEl = document.getElementById("play-btn");
 // console.log(playBtnEl);
 let resetBtnEl = document.getElementById("reset");
